@@ -15,3 +15,14 @@ navigation?.querySelectorAll("a").forEach((link) => {
     menuToggle?.setAttribute("aria-label", "Abrir menu");
   });
 });
+
+document.querySelector("#current-year").textContent = new Date().getFullYear();
+
+const contactForm = document.querySelector("#contact-form");
+const formFeedback = document.querySelector("#form-feedback");
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  formFeedback.textContent = "Obrigado! Recebemos a sua mensagem e entraremos em contacto em breve.";
+  contactForm.reset();
+});
